@@ -34,7 +34,7 @@ So far so good?
 ```
 pip install packaging ninja
 ```
-Move on to [Compostable Kernel](https://github.com/ROCm/composable_kernel
+Move on to [Compostable Kernel](https://github.com/ROCm/composable_kernel)
 ```
 git clone https://github.com/ROCm/composable_kernel.git && \
 cd composable_kernel && \
@@ -42,7 +42,7 @@ mkdir build && \
 cd build
 ```
 Check AMD Arch with `clinfo`, you will find it at "Name=[your arch, gfx...]:sramecc+:xnack-"
-Now, time to compile the package.
+Now, time to compile the package. I suggest you open up a screen or tmux, cause the compilation might take some time, and you won't lose your progress.
 ```
 cmake -D CMAKE_PREFIX_PATH="/opt/rocm:$CONDA_PREFIX" -D CMAKE_CXX_COMPILER=/opt/rocm/bin/hipcc -D CMAKE_BUILD_TYPE=Release -D GPU_TARGETS="gfx908;gfx90a" ..
 ```
