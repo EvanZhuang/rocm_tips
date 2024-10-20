@@ -46,5 +46,10 @@ Now, time to compile the package. I suggest you open up a screen or tmux, cause 
 ```
 cmake -D CMAKE_PREFIX_PATH="/opt/rocm:$CONDA_PREFIX" -D CMAKE_CXX_COMPILER=/opt/rocm/bin/hipcc -D CMAKE_BUILD_TYPE=Release -D GPU_TARGETS="gfx908;gfx90a" ..
 ```
+Took about 5 mins, then
+```
+make -j16
+```
+
 
 
