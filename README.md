@@ -42,10 +42,9 @@ cd flash-attention
 git checkout 3cea2fb
 git submodule update --init
 GPU_ARCHS="gfx90a" python3 setup.py install
-cd ..
 ```
 
-[Optional] Move on to [Compostable Kernel](https://github.com/ROCm/composable_kernel)
+## [Optional] Build [Compostable Kernel](https://github.com/ROCm/composable_kernel)
 ```
 git clone https://github.com/ROCm/composable_kernel.git && \
 cd composable_kernel && \
