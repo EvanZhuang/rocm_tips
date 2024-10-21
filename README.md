@@ -55,12 +55,15 @@ Although I see some error messages like the following:
 ```
 ld.lld: error: CMakeFiles/ckProfiler.dir/profile_contraction_bilinear.cpp.o:(function int ck::profiler::profile_contraction_impl<2, ......
 ```
-I later ran `make -j check`, the build passed all the tests, so shall be fine, except for this
+I later ran `make -j check`, the build passed most of the tests, so shall be fine, except for this
 ```
-/home/yuzhuang/composable_kernel/test/gemm_universal/test_gemm_universal_util.hpp:88: Failure
-Value of: pass
-Actual: false
-Expected: true
+99% tests passed, 2 tests failed out of 307
+
+Total Test time (real) = 3004.89 sec
+
+The following tests FAILED:
+        244 - test_gemm_universal (Failed)
+        261 - test_grouped_convnd_fwd (Failed)
 ```
 
 
