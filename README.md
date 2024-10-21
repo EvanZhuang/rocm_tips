@@ -48,8 +48,19 @@ cmake -D CMAKE_PREFIX_PATH="/opt/rocm:$CONDA_PREFIX" -D CMAKE_CXX_COMPILER=/opt/
 ```
 Took about 5 mins, then
 ```
-make -j16
+make -j32
 ```
-
+This took about 2-3 hours.
+Although I see some error messages like the following:
+```
+ld.lld: error: CMakeFiles/ckProfiler.dir/profile_contraction_bilinear.cpp.o:(function int ck::profiler::profile_contraction_impl<2, ......
+```
+I later ran `make -j check`, the build passed all the tests, so shall be fine, except for this
+```
+/home/yuzhuang/composable_kernel/test/gemm_universal/test_gemm_universal_util.hpp:88: Failure
+Value of: pass
+Actual: false
+Expected: true
+```
 
 
