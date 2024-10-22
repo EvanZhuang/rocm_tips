@@ -3,6 +3,12 @@ Since I am working at AMD GenAI and are constantly using AMD GPUs, might as well
 
 The [official guide](https://rocm.docs.amd.com/projects/install-on-linux/en/develop/install/3rd-party/pytorch-install.html) provides useful information. I am going to use [conda](https://docs.conda.io/projects/conda/en/latest/index.html) instead of the docker builds, since my experience with docker tells me it leaves some mess with its sudo access.
 
+## GPU Usage
+This command will help you check GPU usage.
+```
+rocm-smi
+```
+
 ## Conda Setup
 ```
 conda create --name [your_env] 
@@ -10,7 +16,7 @@ conda activate [your_env]
 ```
 
 ## Installing Pytorch
-Replace the ROCm version with yours, the library will get updated.
+Replace the ROCm version (rocm6.2) with yours, the library will get updated.
 ```
 pip3 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/rocm6.2
 ```
