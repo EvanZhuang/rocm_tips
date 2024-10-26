@@ -50,6 +50,18 @@ git submodule update --init
 GPU_ARCHS="gfx90a" python3 setup.py install
 ```
 
+## Installing Triton
+```
+https://github.com/ROCm/triton.git
+cd triton
+git checkout triton-mlir
+```
+build the package
+```
+cd python
+pip3 install -e .
+```
+
 ## [Optional] Build [Compostable Kernel](https://github.com/ROCm/composable_kernel)
 ```
 git clone https://github.com/ROCm/composable_kernel.git && \
