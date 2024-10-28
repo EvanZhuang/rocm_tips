@@ -52,7 +52,8 @@ GPU_ARCHS="gfx90a" python3 setup.py install
 
 ## Installing Triton
 ```
-https://github.com/ROCm/triton.git
+conda install -c conda-forge gcc
+git clone https://github.com/ROCm/triton.git
 cd triton
 git checkout triton-mlir
 ```
