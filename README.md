@@ -94,4 +94,25 @@ The following tests FAILED:
         261 - test_grouped_convnd_fwd (Failed)
 ```
 
+## Build [VLLM](https://docs.vllm.ai/en/stable/getting_started/amd-installation.html#option-2-build-from-source)
+After building triton, follow the guide on vLLM website, and install the pytorch that matches your ROCM.
 
+```
+$ pip install --upgrade pip
+
+# Install PyTorch
+$ pip uninstall torch -y
+$ pip install --no-cache-dir --pre torch==2.6.0.dev20241024 --index-url https://download.pytorch.org/whl/nightly/rocm6.2
+
+# Build & install AMD SMI
+$ pip install /opt/rocm/share/amd_smi
+
+# Install dependencies
+$ pip install --upgrade numba scipy huggingface-hub[cli]
+$ pip install "numpy<2"
+$ pip install -r requirements-rocm.txt
+
+# Build vLLM for MI210/MI250/MI300.
+$ export PYTORCH_ROCM_ARCH="gfx90a;gfx942"
+$ python3 setup.py develop
+```
